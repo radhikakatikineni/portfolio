@@ -1,0 +1,141 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 15%; /* Dark Gray */
+    --foreground: 240 10% 85%; /* Light Gray */
+    --card: 240 10% 20%; /* Slightly Lighter Dark Gray */
+    --card-foreground: 240 10% 85%;
+    --popover: 240 10% 18%; /* Darker Popover */
+    --popover-foreground: 240 10% 85%;
+    --primary: 270 70% 65%; /* Vibrant Purple */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 300 60% 60%; /* Magenta/Pinkish Purple */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 240 10% 30%; /* Medium Dark Gray */
+    --muted-foreground: 240 10% 65%; /* Medium Light Gray */
+    --accent: 270 70% 75%; /* Lighter Purple */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 60% 50%; /* Red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 25%; /* Dark Gray Border */
+    --input: 240 10% 28%; /* Dark Gray Input */
+    --ring: 270 70% 65%; /* Vibrant Purple for focus */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 10%; /* Even Darker Gray */
+    --foreground: 240 10% 90%; /* Brighter Light Gray */
+    --card: 240 10% 15%; 
+    --card-foreground: 240 10% 90%;
+    --popover: 240 10% 12%;
+    --popover-foreground: 240 10% 90%;
+    --primary: 270 75% 70%; /* Brighter Purple */
+    --primary-foreground: 240 10% 10%;
+    --secondary: 300 65% 65%; /* Brighter Magenta */
+    --secondary-foreground: 240 10% 90%;
+    --muted: 240 10% 20%;
+    --muted-foreground: 240 10% 70%;
+    --accent: 270 75% 80%; 
+    --accent-foreground: 240 10% 10%;
+    --destructive: 0 65% 55%; 
+    --destructive-foreground: 240 10% 90%;
+    --border: 240 10% 20%; 
+    --input: 240 10% 22%;
+    --ring: 270 75% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-primary to-secondary;
+}
+
+.card-hover-effect {
+  @apply transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2.5;
+}
+
+.nav-link {
+  @apply relative px-3 py-2 text-foreground/80 hover:text-primary font-medium transition-colors duration-300;
+}
+
+.nav-link::after {
+  @apply content-[''] absolute bottom-0.5 left-1/2 transform -translate-x-1/2 w-0 h-[3px] bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300 ease-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  @apply w-5/6;
+}
+
+.hero-bg-pattern {
+  background-image:
+    radial-gradient(circle at 100% 0%, hsl(var(--primary)/0.05) 0%, transparent 30%),
+    radial-gradient(circle at 0% 100%, hsl(var(--secondary)/0.05) 0%, transparent 30%);
+  background-size: 60px 60px;
+}
+
+
+.section-padding {
+  @apply py-10 md:py-12 lg:py-16;
+}
+
+.section-title {
+  @apply text-4xl sm:text-5xl md:text-6xl font-extrabold mb-5 md:mb-8 text-center;
+}
+
+.section-subtitle {
+  @apply text-base sm:text-lg md:text-xl text-foreground/75 max-w-3xl mx-auto text-center mb-12 md:mb-20;
+}
+
+.glassmorphism-card {
+    @apply bg-card/70 backdrop-blur-lg border border-white/5 shadow-xl;
+}
+
+.contact-input {
+    @apply bg-background/70 border-border focus:border-primary focus:ring-primary;
+}
+
+.shine-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        hsla(var(--primary-foreground), 0.2), /* Reduced opacity for darker theme */
+        transparent
+    );
+    transition: all 0.6s ease-in-out;
+}
+
+.shine-button:hover::before {
+    left: 100%;
+}
+
+.icon-glow {
+    @apply transition-all duration-300 group-hover:text-primary group-hover:shadow-[0_0_15px_hsl(var(--primary))];
+}
