@@ -45,10 +45,15 @@ const ContactInfo = () => {
       href: "https://www.linkedin.com/in/radhi-katiki-1b8211251",
     },
     {
-      icon: <Twitter className="h-6 w-6" />,
-      label: "Twitter",
-      href: "https://twitter.com/yourprofile", 
+      icon: <Mail className="h-5 w-5" />,
+      label: "Email",
+      href: "mailto:contact@radhi.cloud",
     },
+    // {
+    //   icon: <Twitter className="h-6 w-6" />,
+    //   label: "Twitter",
+    //   href: "https://twitter.com/yourprofile", 
+    // },
   ];
 
   return (

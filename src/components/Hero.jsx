@@ -2,7 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, Linkedin, Twitter, Mail } from "lucide-react";
+import { ArrowRight, Download, Linkedin, Twitter, Mail, Github } from "lucide-react";
+import {radhi} from '../assets/images'
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -87,9 +88,12 @@ const Hero = () => {
             <a href="https://www.linkedin.com/in/radhi-katiki-1b8211251" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="text-foreground/70 hover:text-primary transition-colors duration-300">
               <Linkedin className="h-7 w-7 icon-glow" />
             </a>
-            <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" className="text-foreground/70 hover:text-primary transition-colors duration-300">
+            {/* <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" className="text-foreground/70 hover:text-primary transition-colors duration-300">
               <Twitter className="h-7 w-7 icon-glow" />
-            </a>
+            </a> */}
+            {/* <a href="https://github.com/radhikakatikineni" target="_blank" rel="noopener noreferrer" aria-label="Github Profile" className="text-foreground/70 hover:text-primary transition-colors duration-300">
+              <Github className="h-7 w-7 icon-glow" />
+            </a> */}
              <a href="mailto:contact@radhi.cloud" aria-label="Email Me" className="text-foreground/70 hover:text-primary transition-colors duration-300">
               <Mail className="h-7 w-7 icon-glow" />
             </a>
@@ -108,7 +112,7 @@ const Hero = () => {
               className="w-full h-full object-cover" 
               style={{ objectPosition: 'center 35%' }}
               alt="Radhi Katiki - Professional Portrait"
-             src="https://storage.googleapis.com/hostinger-horizons-assets-prod/629f5f22-0ba5-43f1-8777-69d8edab3392/30e92b7d4c4435288aa97ca87936012c.jpg" />
+              src={radhi}/>
           </div>
         </motion.div>
       </div>

@@ -12,11 +12,11 @@ const Footer = () => {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/radhi-katiki-1b8211251",
     },
-    {
-      icon: <Twitter className="h-5 w-5" />,
-      label: "Twitter",
-      href: "https://twitter.com/yourprofile", 
-    },
+    // {
+    //   icon: <Twitter className="h-5 w-5" />,
+    //   label: "Twitter",
+    //   href: "https://twitter.com/yourprofile", 
+    // },
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
